@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.navbar a {
+    position: relative;
+    transition: 300ms ease-in-out;
+}
+
+.navbar a:hover {
+    color: hsl(233, 26%, 24%);
+}
+
+.navbar a::before {
+    position: absolute;
+    content: "";
+    display: block;
+    height: 5px;
+    left: 0;
+    right: 0;
+    bottom: -30px;
+    background: linear-gradient(to right, hsl(136, 65%, 51%), hsl(192, 70%, 51%));
+    opacity: 0;
+    transition: opacity 300ms ease-in-out;
+}
+
+.navbar a:hover::before {
+    opacity: 1;
+}
+
+.overlay {
+    z-index: 19;
+    position: fixed;
+    top: -50px;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    transform: translateY(-100%);
+    background-color: var(--darkblue);
+    background: linear-gradient(var(--darkblue), transparent);
+    transition: .2s ease-in-out;
+}
+
+.overlay.active {
+    transform: translateY(0);
+    transition: .2s ease-in-out;
+}
+
+
+
+
+
+@media (max-width: 640px) {
+    .navbar {
+        position: absolute;
+        top: 80px;
+        left: 20px;
+        right: 20px;
+        align-items: center;
+        border-radius: 7px;
+        background-color: white;
+        gap: 30px;
+        padding: 40px;
+        box-shadow: 0 10px 40px hsla(0, 0%, 0%, 0.1);
+        transform: scale(0.9);
+        transform-origin: top;
+        opacity: 0;
+        pointer-events: none;
+        transition: all .2s ease-in-out;
+
+        font-size: 22px;
+        color: black;
+
+    }
+
+    .navbar.active {
+        transform: scale(1);
+        opacity: 1;
+
+        pointer-events: all;
+    }
+
+}
