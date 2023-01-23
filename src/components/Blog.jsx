@@ -60,15 +60,7 @@ const Blog = () => {
 
                 ))}
 
-                {/* 
-                    {items.map((item, i) => (
-                        <div className='md:w-[300px] flex flex-col lg:items-start items-center justify-center gap-5' key={i}>
-                            <img src={item.image} alt="" />
-                            <h3 className="text-h3 text-darkblue">{item.title}</h3>
-                            <p className="text-smP ">{item.desription}</p>
-                        </div>
-                    ))} */}
-
+             
             </div>
 
 
